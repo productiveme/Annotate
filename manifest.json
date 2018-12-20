@@ -10,9 +10,9 @@
 			"64": "icons/64.png",
 			"128": "icons/128.png"
 		},
-		"default_title": "ScrapeMate Beta"
+		"default_title": "Annotate Alpha"
 	},
-	"name": "ScrapeMate Beta",
+	"name": "Annotate Alpha",
 	"description": "/* @echo meta.description */",
 	"homepage_url": "/* @echo meta.homepage */",
 	"icons": {
@@ -25,10 +25,5 @@
 	},
 	"permissions": ["tabs", "activeTab", "<all_urls>", "storage", "webRequest", "webRequestBlocking"],
 	"version": "/* @echo meta.version */",
-	// @ifndef env.CHROME
-	"applications": {
-		"gecko": {"id": "me.myself.and.irene@fellow.com"}
-	},
-	// @endif
 	"manifest_version": 2
 }

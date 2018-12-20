@@ -1,10 +1,21 @@
-import Vue from 'vue'
-import MainComponent from './sidebar-main.vue'
+require('babel-polyfill');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import styles from './sidebar.css';
+class SideBar extends React.Component {
+  constructor(props) {
+    super(props);
+  } 
+  render() {
+    return (
+      <div>
+        <div>Hello World!</div>
+        <style jsx global>{styles}</style>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<SideBar />, document.getElementById('main'));
 
 
-window.vue = new Vue({
-    el: '#main',
-    render: h => h(MainComponent)
-})
-
-window.root = vue.$children[0]

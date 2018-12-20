@@ -449,9 +449,9 @@ export default {
                     return ff
                 })
                 if (this.templates[id])
-                    console.log(`ScrapeMate will overwrite ${id}:`, tt)
+                    console.log(`Annotate will overwrite ${id}:`, tt)
                 else
-                    console.log(`ScrapeMate will create ${id}:`, tt)
+                    console.log(`Annotate will create ${id}:`, tt)
                 return [id, tt]
             })
             this.sendMessage('saveStorage', _.fromPairs(templates))

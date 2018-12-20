@@ -1,21 +1,16 @@
-# ScrapeMate Beta ![GitHub Logo](/icons/24.png) 
-Scraping assistant tool. Editing and maintaining CSS/XPath selectors across webpages.  
-Available as a [Chrome/Chromium](https://chrome.google.com/webstore/detail/scrapemate-beta/daiomapeacamgnofkkmiaollhidcndld) and a [Firefox](https://addons.mozilla.org/en-US/firefox/addon/scrapemate/) extensions.
+# Annotate Alpha ![GitHub Logo](/icons/24.png) 
+Forked from [Unknowny/ScrapeMate](https://github.com/Unknowny/ScrapeMate) to be repurposed.
 
-Quick way to interactively pick and maintain CSS/XPath selectors and their presets for external use: website testing or scraping.
+Annotation tool, selecting by CSS selector and URL. Annotate with markdown.
+Soon available as a [Chrome/Chromium](https://chrome.google.com/to-be-defined) and a [Firefox](https://addons.mozilla.org/to-be-defined) extensions.
 
-Features include:
+Quick way to interactively pick CSS/XPath selectors and annotating them with markdown.
+
+Planned features include:
 * Element picker (from [SelectorGadget](https://github.com/cantino/selectorgadget)).
-* List of presets ever worked on.
-* Preset JSON editor (convenient for use in conjunction with scrapy or any similar tools). Presets selective export/import.
-* Quick preview of the data currently selected.
 * Support for `::text` / `::attr()` css pseudo elements and `has-class()` xpath function.
-* Toggling JavaScript for the tab currently working on.
-
-Planned features: nested selectors, more template testing and possibly actual extraction capabilities. See all: [TODO](/TODO).
-
-### Notes
-* This was first intended as a bookmarklet but due to various limitations bookmarklet mode has been dropped. You can still check out outdated but somewhat working version [at this page](https://rawgit.com/Unknowny/ScrapeMate/4a60a3bd65f9445a84a5642a056801ecd85d4212/index.html).
+* Markdown editor for selected element
+* Exporting data for a site / page
 
 ### Screenshots
 ![screenshot](https://lh3.googleusercontent.com/Yzdry6FnIr75tEJnoZCfdn1ybtlRkeyF4kNQZNH7z-GRYzA5Qvx5QW-gjdJKytyZILcYj--LLw=w640-h400-e365)

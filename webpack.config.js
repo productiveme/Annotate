@@ -25,15 +25,33 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.vue$/,
-                loader: 'vue-loader',
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: require('styled-jsx/webpack').loader,
+                    options: {
+                        type: 'scoped'
+                    }
+                },
+            },
+            {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
             }
-        ]
+        }]
     },
     resolve: {
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js'
-        }
+    extensions: ['.mjs', '.js', '.jsx'],
+    modules: [path.resolve('./node_modules'), path.resolve('./src')],
+    alias: {
+        react: path.resolve(__dirname, './node_modules/react'),
+        'react-dom': path.resolve(__dirname, './node_modules/react-dom')
+    }
     },
     plugins: [
         CopyWebpackPlugin([

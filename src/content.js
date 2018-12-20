@@ -23,7 +23,7 @@ function disablePicker () {
 	// just toggle it on and off instead of unsetting?
 
 	if (!selectorGadget) return
-	sidebarIFrame.classList.remove('ScrapeMate_picking')
+	sidebarIFrame.classList.remove('Annotate_picking')
 	selectorGadget.unbindAndRemoveInterface()
 	selectorGadget = null
 	// on repeated initialization of SelectorGadget it doesn't unbind his events himself
@@ -31,7 +31,7 @@ function disablePicker () {
 }
 
 function enablePicker () {
-	sidebarIFrame.classList.add('ScrapeMate_picking')
+	sidebarIFrame.classList.add('Annotate_picking')
 	selectorGadget = new SelectorGadget()
 	selectorGadget.makeInterface()
 	selectorGadget.clearEverything()
@@ -64,7 +64,7 @@ function initUI (cb) {
 	iframeBus.listen()
 
 	// inject sidebar
-	let props = {id: 'ScrapeMate', src: browser.extension.getURL(SOURCES.sidebarIFrame)}
+	let props = {id: 'Annotate', src: browser.extension.getURL(SOURCES.sidebarIFrame)}
 	sidebarIFrame = insertElem('iframe', props, document.body)
 	sidebarIFrame.addEventListener('load', e => {
 		// setup receiving side of the bus now
@@ -73,7 +73,7 @@ function initUI (cb) {
 }
 
 function toggleSelf () {
-    if (document.querySelector('#ScrapeMate')) close()
+    if (document.querySelector('#Annotate')) close()
 	else initUI()
 }
 
@@ -100,7 +100,7 @@ const exposed = {
 	},
 
 	togglePosition () {
-		sidebarIFrame.classList.toggle('ScrapeMate_left')
+		sidebarIFrame.classList.toggle('Annotate_left')
 	},
 
     changeSelectorPicked (selector) {
@@ -128,7 +128,7 @@ const exposed = {
 		var el = document.createElement('a')
 		el.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text))
 		let dt = new Date().toISOString().split('T')[0]
-		el.setAttribute('download', `ScrapeMate.storage.${dt}.json`)
+		el.setAttribute('download', `Annotate.storage.${dt}.json`)
 		el.style.display = 'none'
 		document.body.appendChild(el)
 		el.click()
@@ -176,7 +176,7 @@ const exposed = {
 			if (ownText.length) attrs['_text'] = ownText
 
 			if (attrs['class'])
-				attrs['class'] = attrs['class'].replace(/\s*(ScrapeMate_\S+|selectorgadget_\S+)\s*/g, '')
+				attrs['class'] = attrs['class'].replace(/\s*(Annotate_\S+|selectorgadget_\S+)\s*/g, '')
 			if (!attrs['class'])
 				delete attrs['class']
 
@@ -190,13 +190,13 @@ const exposed = {
 		this.unhighlight()
 		_.forEach(Selector.select(selector)[1], el => {
 			// TODO:low there should probably be an easier call that skips whole big css augmentation deal when we dont need it
-			return Selector.asElementNode(el).classList.add('ScrapeMate_highlighted')
+			return Selector.asElementNode(el).classList.add('Annotate_highlighted')
 		})
     },
 
 	unhighlight () {
-		_.forEach(document.querySelectorAll('.ScrapeMate_highlighted'),
-					el => el.classList.remove('ScrapeMate_highlighted'))
+		_.forEach(document.querySelectorAll('.Annotate_highlighted'),
+					el => el.classList.remove('Annotate_highlighted'))
 	}
 
 }

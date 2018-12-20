@@ -1,3 +1,4 @@
+require('babel-polyfill');
 import browser from '../vendor/browser-polyfill.js'
 
 
