@@ -1,0 +1,35 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "jest": true
+    },
+    "rules": {
+        "import/no-extraneous-dependencies": false,
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "indent": [
+            "warn",
+            2
+        ],
+        "func-names": 0,
+        "no-underscore-dangle": 0,
+        "quote-props": 0,
+        "no-undef": 0,
+        "no-plusplus": 0
+    }
+}
